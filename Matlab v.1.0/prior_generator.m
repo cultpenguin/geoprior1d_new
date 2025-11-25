@@ -55,6 +55,7 @@ function [name, flag_vector] = prior_generator(input, Nreals, dmax, dz, doPlot)
 
 % Add subfolders with code and data
 addpath functions data
+warning('off','all')
 
 
 % Extract input parameters either from Matlab structure or excel filename
@@ -118,12 +119,12 @@ h5writeatt(name,'/M2','cmap', cmaps.Classes);
 
 
 % Water table
-if isfield(info,'WaterLevel')
-    h5create(name,'/M3',size(os'), 'Datatype', 'single')
-    h5write(name,'/M3',os')
-    h5writeatt(name,'/M3','is_discrete', 0);
-    h5writeatt(name,'/M3','name', 'Waterlevel');
-    h5writeatt(name,'/M3','x', 0); 
+if isfield(info, 'WaterLevel')
+    h5create(name, '/M3',size(os'), 'Datatype', 'single')
+    h5write(name, '/M3',os')
+    h5writeatt(name, '/M3','is_discrete', 0);
+    h5writeatt(name, '/M3','name', 'Waterlevel');
+    h5writeatt(name, '/M3','x', 0); 
 end
 
 
@@ -137,6 +138,7 @@ contents_geo2 = string(table2cell(T_geo2));
 T_res = readtable([info.filename, '.xlsx'], 'Sheet', 'Resistivity');
 headers_res  = string(T_res.Properties.VariableNames);
 contents_res = string(table2cell(T_res));
+
 
 h5writeatt(name, '/', 'Creation date', date);
 h5writeatt(name, '/', 'Class headers', headers_geo1);
@@ -216,5 +218,6 @@ end
 
 linkprop(sp,{'XLim','YLim'});
 
+warning('on','all')
 end
 

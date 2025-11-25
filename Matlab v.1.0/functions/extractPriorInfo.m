@@ -2,6 +2,13 @@ function [info,cmaps] = extractPriorInfo(filename)
 
 % Following section reads data from the spreadsheet and write them to a
 % matlab structure. 
+if endsWith(filename, '.xlsx')
+    info.filename = filename(1:end-5);
+elseif endsWith(filename, '.xls')
+    info.filename = filename(1:end-4);
+else
+    info.filename = filename;
+end
 
 
 % Load in geology as classes
