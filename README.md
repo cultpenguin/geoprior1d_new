@@ -48,11 +48,9 @@ GeoPrior1DApp Python
 
 
 
-Prerequisites:
+For detailed information about the Python module, including installation, usage, and API documentation, please see:
 
-Python installed
-
-pip installed
+[geoprior1d/README.md](geoprior1d/README.md)
 
 
 

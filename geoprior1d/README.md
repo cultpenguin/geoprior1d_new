@@ -6,14 +6,17 @@
 
 1D geological prior generator for stochastic lithology and resistivity modeling.
 
+**Note:** This Python module provides a **command-line interface** and **Python API** for programmatic use. It is **not a GUI application**. For the GUI version, see the MATLAB-based GeoPrior1DApp.
+
 ## Installation
 
-### From PyPI
+Simply install from PyPI:
+
 ```bash
 pip install geoprior1d
 ```
 
-### From source
+### Alternative: Install from source
 ```bash
 cd geoprior1d
 
