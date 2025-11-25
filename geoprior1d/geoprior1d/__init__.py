@@ -5,7 +5,17 @@ A Python package for generating stochastic realizations of subsurface
 lithology and resistivity models based on geological constraints.
 """
 
-__version__ = "0.9.0"
+try:
+    from importlib.metadata import version, PackageNotFoundError
+except ImportError:
+    # Python < 3.8
+    from importlib_metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version("geoprior1d")
+except PackageNotFoundError:
+    # Package is not installed, fallback to a default version
+    __version__ = "0.0.0.dev"
 
 # Import main API functions
 from .core import geoprior1d, generate_prior_realizations, save_prior_to_hdf5
