@@ -1,4 +1,6 @@
 # GeoPrior1D
+[![PyPI](https://badge.fury.io/py/geoprior1d.svg)](https://badge.fury.io/py/geoprior1d)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## **1. Introduction**
 GeoPrior1D was developed for the INTEGRATE (Informative Mapping of Construction Aggregate Resources Through Statistical data Analysis) project, which aims at improving the near surface geophysical mapping capabilities of currently applied methods in search for aggregate resources (for more see https://integrate.nu/).  
