@@ -1,14 +1,15 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=77.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "geoprior1d"
-version = "0.9.9"
+version = "1.0.1"
 description = "1D geological prior generator for stochastic lithology and resistivity modeling"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "MIT"}
+license = "MIT"
+license-files = ["LICENSE"]
 authors = [
     {name = "Jesper Nørgaard", email = "jesn@geus.dk"}
 ]
@@ -29,7 +30,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -63,3 +63,10 @@ packages = ["geoprior1d", "examples", "examples.data"]
 
 [tool.setuptools.package-data]
 "examples.data" = ["*.xlsx"]
+
+# Development tools (installed by default with `uv sync`)
+[dependency-groups]
+dev = [
+    "build",
+    "twine",
+]

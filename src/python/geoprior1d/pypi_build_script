@@ -15,9 +15,14 @@ echo "Cleaning up old build artifacts..."
 rm -rf dist/ build/ *.egg-info/
 
 # Make sure you have the required tools
-echo "Updating build tools..."
-pip install --upgrade pip
-pip install --upgrade build setuptools wheel twine
+# (with `uv sync` they are already installed via the dev dependency group)
+if python -c "import build, twine" 2>/dev/null; then
+    echo "Build tools already installed."
+else
+    echo "Updating build tools..."
+    python -m pip install --upgrade pip
+    python -m pip install --upgrade build setuptools wheel twine
+fi
 
 # Build distribution packages using build module (PEP 517)
 echo "Building distribution packages..."
